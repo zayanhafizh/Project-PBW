@@ -60,7 +60,7 @@ if ($stmt) {
     while ($row = mysqli_fetch_assoc($result)) {
         $res .= '<tr>';
         $res .= '<td>';
-        $res .= '<img src="../img/goodspict/' . htmlspecialchars($row['gambar'], ENT_QUOTES, 'UTF-8') . '">';
+        $res .= '<img src="../../img/goodspict/' . htmlspecialchars($row['gambar'], ENT_QUOTES, 'UTF-8') . '">';
         $res .= '<p>' . htmlspecialchars($row['namaBarang'], ENT_QUOTES, 'UTF-8') . '</p>';
         $res .= '</td>';
         $res .= '<td>' . htmlspecialchars($row['reporting_date'], ENT_QUOTES, 'UTF-8') . '</td>';

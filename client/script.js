@@ -189,7 +189,7 @@ tableData.forEach(item => {
 		}
 
 		// Eksekusi AJAX
-		xhr.open('GET', '../ajax/modal.php?id=' + encodeURIComponent(itemId)+ '&kategory=' + path + '&jenisBarang=' + url, true);
+		xhr.open('GET', 'ajax/modal.php?id=' + encodeURIComponent(itemId), true);
 		xhr.send();
 	});
 });

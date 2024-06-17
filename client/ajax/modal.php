@@ -1,15 +1,12 @@
 <?php 
-require '../../../controller/functions.php';
+require '../../controller/functions.php';
 
 $id = $_GET['id'] ?? null;
-$kategori_barang = $_GET['kategory'];
-$jenis_barang = $_GET['jenisBarang'];
-$jenis_barang = explode('.', $jenis_barang)[0];
 
 if ($id && is_numeric($id)) {
     // Prepare the statement to prevent SQL injection
     $stmt = $conn->prepare("SELECT * FROM user 
-                            INNER JOIN $kategori_barang ON user.id_user = $kategori_barang.id_user
+                            INNER JOIN baranghilang ON user.id_user = baranghilang.id_user
                             WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -34,7 +31,7 @@ if ($id && is_numeric($id)) {
 
 ?>
 <div class="img-modal-content">
-<img src="../../img/goodspict/<?= $rows['gambar'] ?>" alt="item-img" />
+    <img src="img/goodspict/<?= $rows['gambar'] ?>" alt="item-img" />
 </div>
 <div class="item-details">
     <h2><?php echo htmlspecialchars($rows['namaBarang']); ?></h2>

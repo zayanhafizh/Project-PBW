@@ -26,7 +26,7 @@
 				<div class="slider">
 					<ul>
 						<li>
-							<a href="#">
+						<a href="<?= BASE_URL ?>category/baranghilang/all.php">
 								<i class='bx bxs-grid-alt'></i>
 								<span>ALL</span>
 							</a>
@@ -66,7 +66,7 @@
 				<div class="slider">
 				<ul>
 						<li>
-							<a href="#">
+						<a href="<?= BASE_URL ?>category/barangtemuan/all.php">
 								<i class='bx bxs-grid-alt'></i>
 								<span>ALL</span>
 							</a>

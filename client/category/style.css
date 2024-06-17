@@ -571,8 +571,8 @@ body {
 	display: none;
 }
 .cookiesContent.display{
-	width: 400px;
-	height: 500px;
+	width: 450px;
+	height: 550px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -597,24 +597,33 @@ button.close {
 	cursor: pointer; /* Tambahkan cursor pointer untuk menunjukkan bahwa tombol dapat diklik */
     z-index: 1000; 
 }
+.cookiesContent .modal-content .img-modal-content{
+	width: 390px;
+	height: 200px;
+	display: grid;
+  	place-items: center;
+}
 .cookiesContent .modal-content img{
 	width: 8rem;
 	margin-bottom: 15px;
 }
-.cookiesContent.display .caption{
-	margin-bottom: 10px;
+.cookiesContent.display .description{
+	height: 1.4rem;
 }
 .cookiesContent.display .information{
-	display: flex;
-	flex-direction: row;
-	margin-top: 5px;
+	margin: auto;
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+	width: 20rem;
 }
 .cookiesContent.display .head-information{
 	text-align: justify;
-	margin-right: 20px;
 }
 .cookiesContent.display .body-information{
 	text-align: justify;
+	width: 7.5rem;
 }
 button.accept {
 	margin-top: 30px;
@@ -627,6 +636,7 @@ button.accept {
 	color: white;
 	box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
 }
+
 
 
 
