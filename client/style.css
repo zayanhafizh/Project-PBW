@@ -83,7 +83,7 @@ body {
 	width: 60px;
 }
 #sidebar .brand {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 700;
 	height: 56px;
 	display: flex;
@@ -105,10 +105,10 @@ body {
 
 #sidebar .side-menu {
 	width: 100%;
-	margin-top: 4rem;
+	margin-top: 2rem;
 	overflow: unset;
 }#sidebar .side-menu.top {
-	height: 40rem;
+	height: 30rem;
 }
 #sidebar .side-menu .menu-top{
 	height: 100%;
@@ -134,7 +134,7 @@ body {
 	padding: 4px;
 }
 #sidebar #menu-top {
-	margin-top: 2rem;
+	margin-top: 2.5rem;
 }
 #sidebar .side-menu li.active {
 	background: var(--grey);
@@ -169,7 +169,7 @@ body {
 	display: flex;
 	align-items: center;
 	border-radius: 48px;
-	font-size: 16px;
+	font-size: 14px;
 	color: var(--dark);
 	white-space: nowrap;
 	overflow-x: hidden;
