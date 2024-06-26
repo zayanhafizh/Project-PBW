@@ -65,7 +65,7 @@ $countDiscoverGoods = count($barangTemuan);
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
-            <?php include "../../partials/navbar.php"; ?>
+        <?php include "../../partials/navbar.php"; ?>
         <!-- NAVBAR -->
 
         <!-- MAIN -->
@@ -86,7 +86,7 @@ $countDiscoverGoods = count($barangTemuan);
             </div>
 
             <!-- Box info -->
-            <?php include "../../partials/boxinfo.php" ?>
+                <?php include "../../partials/boxinfo.php" ?>
             <!-- Box info -->
 
             <div class="table-data">
@@ -95,13 +95,13 @@ $countDiscoverGoods = count($barangTemuan);
                         <h3>Recent Report</h3>
                         <!-- Kotak Pencarian -->
                         <div class="search-box" id="search-box">
-                            <form method="post">
+                            <form  method="post">
                                 <input type="search" placeholder="Search..." class="search-box-input" id="input-report">
                             </form>
                         </div>
                         <!-- /Kotak Pencarian -->
                         <i class='bx bx-search' id="search-icon"></i>
-                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-filter' ></i>
                     </div>
                     <div id="tbody-replace">
                     <table id="myTable" class="fade-in">
@@ -109,24 +109,22 @@ $countDiscoverGoods = count($barangTemuan);
                             <tr>
                                 <th>Goods</th>
                                 <th>Reporting Date</th>
-                                <th>Type</th>
                                 <th>Place</th>
+                                <th>Type</th>
                                 <th>Description</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>    
-                            <?php foreach ($rows as $row): ?>
+                            <?php foreach ($rows as $row) : ?>
                                 <tr data-id="<?php echo htmlspecialchars($row['id']); ?>">
                                     <td>
                                         <img src="../../img/goodspict/<?php echo htmlspecialchars($row['gambar']); ?>">
                                         <p><?php echo htmlspecialchars($row['namaBarang']); ?></p>
                                     </td>
-                                    <td><?php echo htmlspecialchars($row['reporting_date']); ?></td>
+                                    <td> <?php echo htmlspecialchars($row['reporting_date']); ?> </td>
                                     <td><?php echo htmlspecialchars($row['tempat']); ?></td>
                                     <td><?php echo htmlspecialchars($row['jenisBarang']); ?></td>
                                     <td><?php echo htmlspecialchars($row['deskripsi']); ?></td>
-                                    <td><span class="status completed">Completed</span></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
@@ -135,12 +133,13 @@ $countDiscoverGoods = count($barangTemuan);
                 </div>
             </div>
             <!-- Modal ketika setiap barang ditekan -->
-                <?= include "../../partials/modal.php"  ?>
+                <?php include "../../partials/modal.php" ?>
             <!-- Modal -->
         </main>
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->
+    
 
     <script src="../script.js"></script>
 

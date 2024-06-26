@@ -1,7 +1,12 @@
 <?php 
+define('LOGIN_URL','http://localhost/fixSiPencari/login/');
 
-
-
+session_start();
+// Check session
+if (!isset($_SESSION["login"])) {
+    header("Location: ".LOGIN_URL);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

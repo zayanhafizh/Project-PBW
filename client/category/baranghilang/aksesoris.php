@@ -108,10 +108,9 @@ $countDiscoverGoods = count($barangTemuan);
                             <tr>
                                 <th>Goods</th>
                                 <th>Reporting Date</th>
-                                <th>Type</th>
                                 <th>Place</th>
+                                <th>Type</th>
                                 <th>Description</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>    
@@ -125,7 +124,6 @@ $countDiscoverGoods = count($barangTemuan);
                                     <td><?php echo htmlspecialchars($row['tempat']); ?></td>
                                     <td><?php echo htmlspecialchars($row['jenisBarang']); ?></td>
                                     <td><?php echo htmlspecialchars($row['deskripsi']); ?></td>
-                                    <td><span class="status completed">Completed</span></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>

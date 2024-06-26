@@ -44,7 +44,7 @@ const searchButton = document.querySelector('#content nav form .form-input butto
 const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
 const searchForm = document.querySelector('#content nav form');
 
-searchButton.addEventListener('click', function (e) {
+searchButtonIcon.addEventListener('click', function (e) {
 	if(window.innerWidth < 576) {
 		e.preventDefault();
 		searchForm.classList.toggle('show');

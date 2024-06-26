@@ -30,9 +30,7 @@ function upload() {
 
     // cek apakah ada gambar yang diupload
     if ($error === 4 ) {
-        echo "<script> 
-            alert('Upload Gambar Terlebih Dahulu')
-        </script>";
+        
         return false;
     }
 
@@ -41,17 +39,13 @@ function upload() {
     $ekstensiGambar = pathinfo($namaFile, PATHINFO_EXTENSION);
 
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "<script> 
-            alert('Yang Anda Upload Bukan Gambar')
-        </script>";
+        
         return false;
     }
 
     // cek ukurannya
     if ($ukuran > 1000000) {
-        echo "<script> 
-            alert('Ukuran Gambar Terlalu Besar')
-        </script>";
+        
         return false;
     }
 
@@ -60,9 +54,7 @@ function upload() {
 
     // lolos pengecekan gambar kemudian upload 
     if (!move_uploaded_file($tmpName, '../client/img/goodspict/'.$newFileName)) {
-        echo "<script> 
-            alert('Gagal Mengunggah Gambar')
-        </script>";
+        
         return false;
     }
 

@@ -28,9 +28,10 @@ $stmt = $conn->prepare("UPDATE $kategoriBarang SET
                         tempat = ?, 
                         gambar = ?, 
                         jenisBarang = ?, 
-                        deskripsi = ? 
+                        deskripsi = ?, 
+                        reporting_date = ?
                         WHERE id = ?");
-$stmt->bind_param("sssssi", $namaBarang, $tempat, $gambar, $jenisBarang, $deskripsi, $id);
+$stmt->bind_param("sssssss", $namaBarang, $tempat, $gambar, $jenisBarang, $deskripsi, $tanggal_pelaporan, $id);
 
 if ($stmt->execute()) {
     header('Location:' . LAPORAN_URL);

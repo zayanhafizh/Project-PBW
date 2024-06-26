@@ -64,8 +64,7 @@ $countDiscoverGoods = count($barangTemuan);
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
-            <?php include "../../partials/navbar.php"; ?>
-        </nav>
+        <?php include "../../partials/navbar.php"; ?>
         <!-- NAVBAR -->
 
         <!-- MAIN -->
@@ -86,7 +85,7 @@ $countDiscoverGoods = count($barangTemuan);
             </div>
 
             <!-- Box info -->
-            <?php include "../../partials/boxinfo.php" ?>
+                <?php include "../../partials/boxinfo.php" ?>
             <!-- Box info -->
 
             <div class="table-data">
@@ -109,10 +108,9 @@ $countDiscoverGoods = count($barangTemuan);
                             <tr>
                                 <th>Goods</th>
                                 <th>Reporting Date</th>
-                                <th>Type</th>
                                 <th>Place</th>
+                                <th>Type</th>
                                 <th>Description</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>    
@@ -126,7 +124,6 @@ $countDiscoverGoods = count($barangTemuan);
                                     <td><?php echo htmlspecialchars($row['tempat']); ?></td>
                                     <td><?php echo htmlspecialchars($row['jenisBarang']); ?></td>
                                     <td><?php echo htmlspecialchars($row['deskripsi']); ?></td>
-                                    <td><span class="status completed">Completed</span></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
@@ -135,7 +132,7 @@ $countDiscoverGoods = count($barangTemuan);
                 </div>
             </div>
             <!-- Modal ketika setiap barang ditekan -->
-                <?= include "../../partials/modal.php"  ?>
+                <?php include "../../partials/modal.php" ?>
             <!-- Modal -->
         </main>
         <!-- MAIN -->

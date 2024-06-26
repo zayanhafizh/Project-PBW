@@ -166,7 +166,7 @@ inputReport.addEventListener('keyup', function () {
 const tableData = document.querySelectorAll('tr[data-id]');
 
 tableData.forEach(item => {
-    const actionButtons = item.querySelectorAll('button');
+    const actionButtons = item.querySelectorAll('.button-edit');
     var id = item.getAttribute('data-id');
     var kategoriBarang = url.split('.')[0]; // Anda perlu mendapatkan kategori barang di luar loop agar nilainya dapat diakses di dalam event listener
 
