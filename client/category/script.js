@@ -232,11 +232,11 @@ document.addEventListener('click', function (event) {
 const inputReport = document.getElementById('input-report');
 var path = window.location.pathname;
 path = path.split('/');
-path = path[4];
+path = path[3];
 var url = window.location.href;
 url = url.split('/');
-url = url[7];
-console.log(url)
+url = url[6];
+// console.log(url)
 const table = document.querySelector('table');
 const tableBody = table.querySelector('tbody');
 
@@ -306,7 +306,7 @@ tableData.forEach(item => {
 
 closeModal.addEventListener('click', function () {
 	cookiesContent.classList.remove('display');
-	console.log("halo")
+	// console.log("halo")
 })
   
 
