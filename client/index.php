@@ -1,7 +1,7 @@
 <?php 
 require '../controller/functions.php';
 
-define('LOGIN_URL','http://localhost/fixSiPencari/login/');
+define('LOGIN_URL', 'https://sipencari.rfaridh.my.id/login/');
 
 session_start();
 

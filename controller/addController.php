@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 session_start();
-define('BASE_URL','http://localhost/fixSiPencari/client/');
+define('BASE_URL', 'https://sipencari.rfaridh.my.id/client/');
 
 try {
     // Ambil nilai dari form dan lakukan sanitasi

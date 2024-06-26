@@ -1,7 +1,7 @@
 <?php 
-define('ADMIN_URL', 'http://localhost/fixSiPencari/admin/');
-define('CLIENT_URL', 'http://localhost/fixSiPencari/client/');
-define('LOGIN_URL', 'http://localhost/fixSiPencari/login/');
+define('ADMIN_URL', 'https://sipencari.rfaridh.my.id/admin/');
+define('CLIENT_URL', 'https://sipencari.rfaridh.my.id/client/');
+define('LOGIN_URL', 'https://sipencari.rfaridh.my.id/login/');
 
 session_start();
 require 'functions.php';

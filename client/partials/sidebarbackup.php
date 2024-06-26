@@ -1,7 +1,7 @@
 <?php 
 
-	define('BASE_URL', 'http://localhost/fixSiPencari/client/');
-	define('LOGOUT_URL','http://localhost/fixSiPencari/logout/logout.php');
+	define('BASE_URL', 'https://sipencari.rfaridh.my.id/client/');
+	define('LOGOUT_URL', 'https://sipencari.rfaridh.my.id/logout/logout.php');
 	$current_page = basename($_SERVER['PHP_SELF']);
 
 ?>

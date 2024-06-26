@@ -6,7 +6,7 @@ $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
 $kategoriBarang = preg_replace('/[^a-zA-Z0-9_]/', '', htmlspecialchars($_GET['kat']));
 
 // Define the LAPORAN_URL constant
-define('LAPORAN_URL', 'http://localhost/fixSiPencari/client/category/laporansaya/' . $kategoriBarang . '.php');
+define('LAPORAN_URL', 'https://sipencari.rfaridh.my.id/client/category/laporansaya/' . $kategoriBarang . '.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

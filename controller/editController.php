@@ -10,7 +10,7 @@ $deskripsi = htmlspecialchars($_POST['deskripsi']);
 $tanggal_pelaporan = htmlspecialchars($_POST['tanggal_pelaporan']);
 $gambarLama = ($_POST["gambarLama"]);
 
-define('CLIENT_URL', 'http://localhost/fixSiPencari/client/');
+define('CLIENT_URL', 'https://sipencari.rfaridh.my.id/client/');
 define('LAPORAN_URL', CLIENT_URL . 'category/laporansaya/' . $kategoriBarang . '.php');
 
 if ($_FILES["gambar"]["error"] === 4) {
