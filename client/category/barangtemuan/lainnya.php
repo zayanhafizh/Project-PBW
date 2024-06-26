@@ -29,7 +29,7 @@ function fetch_data($conn, $table_name, $jenis_barang = null) {
 }
 
 // Fetching data
-$rows = fetch_data($conn, 'barangTemuan', 'Barang lain');
+$rows = fetch_data($conn, 'barangtemuan', 'Barang lain');
 $barangHilang = fetch_data($conn, 'baranghilang', 'Barang lain');
 $user = fetch_data($conn, 'user');
 $barangTemuan = fetch_data($conn, 'barangtemuan', 'Barang lain');
