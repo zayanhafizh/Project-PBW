@@ -178,7 +178,7 @@ tableData.forEach(item => {
                 cookiesContent.classList.add('display');
                 const deleteAccept = cookiesContent.querySelector('.accept')
                 deleteAccept.addEventListener('click', () => {
-                    window.location.href = `http://localhost/fixSiPencari/controller/deleteController.php?id=${id}&kat=${kategoriBarang}`;
+                    window.location.href = `https://sipencari.rfaridh.my.id/controller/deleteController.php?id=${id}&kat=${kategoriBarang}`;
                 }); 
             }
             console.log(item.className);
