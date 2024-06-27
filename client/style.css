@@ -745,3 +745,42 @@ button.accept {
 		min-width: 850px;
 	}
 }
+
+/* Responsif untuk ukuran layar yang lebih kecil */
+@media (max-width: 600px) {
+    .cookiesContent.display {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .cookiesContent.display .information {
+        grid-template-columns: 1fr;
+    }
+
+    .cookiesContent.display .head-information,
+    .cookiesContent.display .body-information {
+        width: 100%;
+    }
+
+    button .accept {
+        width: 50%;
+        padding: 12px;
+    }
+}
+
+/* Responsif untuk tablet */
+@media (min-width: 600px) and (max-width: 900px) {
+    .cookiesContent.display {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .cookiesContent.display .information {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button.accept {
+        width: 100%;
+        padding: 12px;
+    }
+}

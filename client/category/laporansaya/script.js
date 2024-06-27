@@ -1,29 +1,26 @@
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li .category-menu');
-allSideMenu.forEach(item=> {
-	const li = item.parentElement;
+allSideMenu.forEach(item => {
+    const li = item.parentElement;
 
-	item.addEventListener('click', function () {
-		allSideMenu.forEach(i=> {
-			i.parentElement.classList.remove('active');
-		})
-		li.classList.add('active');
-		const firstMenu = document.querySelector('.first-menu-top');
-		const secondMenu = document.querySelector('.second-menu-top');
-		const thirdMenu = document.querySelector('.third-menu-top');
-		var parentItem = item.parentElement;
-		parentItem = parentItem.className;
-		console.log(parentItem)
-		if ( parentItem === "first-menu-top active" || parentItem === "first-menu-top add-margin active") {
-			firstMenu.classList.toggle('add-margin');
-		} else if(parentItem === "second-menu-top active" || parentItem === "second-menu-top add-margin active") 
-		{
-			secondMenu.classList.toggle('add-margin');
-		} else {
-			thirdMenu.classList.toggle('add-margin');
-		}
-		const slider = item.nextElementSibling;
-		slider.classList.toggle('display-nav-menu');
-	})
+    item.addEventListener('click', function (e) {
+        allSideMenu.forEach(i => {
+            i.parentElement.classList.remove('active');
+            i.parentElement.classList.remove('add-margin');
+            i.nextElementSibling.classList.remove('display-nav-menu');
+        });
+
+        // Toggle the classes on the clicked item
+        li.classList.toggle('active');
+        
+        // Check if the element already has the 'active' class
+        if (li.classList.contains('active')) {
+            li.classList.add('add-margin');
+            item.nextElementSibling.classList.add('display-nav-menu');
+        } else {
+            li.classList.remove('add-margin');
+            item.nextElementSibling.classList.remove('display-nav-menu');
+        }
+    });
 });
 
 
