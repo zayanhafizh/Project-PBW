@@ -596,8 +596,8 @@ body {
 	display: none;
 }
 .cookiesContent.display{
-	width: 450px;
-	height: 550px;
+	width: 300px;
+	height: 350px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -629,7 +629,7 @@ button.close {
   	place-items: center;
 }
 .cookiesContent .modal-content img{
-	width: 8rem;
+	width: 5rem;
 	margin-bottom: 15px;
 }
 .cookiesContent.display .description{
@@ -655,7 +655,8 @@ button.accept {
 	background-color: #ed6755;
 	border: none;
 	border-radius: 5px;
-	width: 200px;
+	height: 100px;
+	width: 150px;
 	padding: 14px;
 	font-size: 16px;
 	color: white;

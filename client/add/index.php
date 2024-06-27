@@ -60,6 +60,7 @@ if (!isset($_SESSION["login"])) {
                 <input type="date" id="tanggal" name="tanggal_pelaporan" required>
             </div>
             <div class="form-group">
+                <button type="button" onclick="history.back();">Back</button>
                 <button type="submit">Kirim Laporan</button>
             </div>
         </form>
