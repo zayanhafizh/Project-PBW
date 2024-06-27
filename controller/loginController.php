@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Autentikasi User
-    $stmt = $conn->prepare("SELECT id_user, username, password FROM user WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_regenerate_id(true);
             $_SESSION["login"] = true;
             $_SESSION["id_user"] = $row['id_user'];
+            $_SESSION["username"] = $row['username'];
+            $_SESSION["nim"] = $row['nim'];
 
             if (isset($_POST["remember"])) {
                 $session_id = session_id();

@@ -72,7 +72,8 @@ body {
     height: 150px;
 }
 
-.form-group button {
+.form-group button[type="submit"] {
+    margin-left: auto; /* Memindahkan tombol Ubah ke paling kanan */
     background-color: var(--blue);
     color: #ffffff;
     padding: 15px 25px;
@@ -81,6 +82,24 @@ body {
     cursor: pointer;
     font-weight: 500;
     font-size: 16px; /* Ukuran font lebih besar */
+}
+
+.form-group button[type="button"] {
+    background-color: var(--blue);
+    color: #ffffff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px; /* Ukuran font lebih besar */
+    margin-left: auto;
+}
+
+.form-group button[type="submit"]:hover,
+.form-group button[type="button"]:hover {
+    background-color: var(--dark);
+    color: #ffffff;
 }
 
 .form-group button:hover {

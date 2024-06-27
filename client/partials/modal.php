@@ -15,7 +15,7 @@
                 <ul>
                     <li>Penemu</li>
                     <li>Email</li>
-                    <li>Tempat hilang</li>
+                    <li>Tempat</li>
                     <li>Tanggal dilaporkan</li>
                 </ul>
             </div>

@@ -172,7 +172,7 @@ tableData.forEach(item => {
 
     actionButtons.forEach(item => {
         item.addEventListener('click', function() {
-            if (item.className === "edit-button") {
+            if (item.className === "button-edit") {
                 // Mengirimkan ID dan kategori barang ke editController.php
                 window.location.href = `http://localhost/fixSiPencari/client/edit/index.php?id=${id}&kat=${kategoriBarang}`;
             } else {
@@ -184,6 +184,7 @@ tableData.forEach(item => {
                     window.location.href = `http://localhost/fixSiPencari/controller/deleteController.php?id=${id}&kat=${kategoriBarang}`;
                 }); 
             }
+            console.log(item.className);
         });
     });
 });

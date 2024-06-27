@@ -18,6 +18,7 @@ if ($result->num_rows > 0) {
 } else {
     // Jika tidak ada data yang ditemukan, mungkin Anda ingin menampilkan pesan atau melakukan tindakan lain
     echo "Data tidak ditemukan";
+    exit;
 }
 ?>
 
@@ -33,27 +34,26 @@ if ($result->num_rows > 0) {
     <div class="form-container">
         <h2>Form Pelaporan Barang Hilang atau Temuan</h2>
         <form action="../../controller/editController.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?= $id ?>">
-            <input type="hidden" name="kat" value="<?= $kategoriBarang ?>">
-            <input type="hidden" name="gambarLama" value="<?= $row['gambar'] ?>">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+            <input type="hidden" name="kat" value="<?= htmlspecialchars($kategoriBarang) ?>">
+            <input type="hidden" name="gambarLama" value="<?= htmlspecialchars($row['gambar']) ?>">
             <div class="form-group">
                 <label for="nama-barang">Nama Barang:</label>
-                <input type="text" id="nama-barang" name="nama_barang" value="<?= isset($row['namaBarang']) ? $row['namaBarang'] : '' ?>" required>
+                <input type="text" id="nama-barang" name="nama_barang" value="<?= htmlspecialchars($row['namaBarang']) ?>" required>
             </div>
             <div class="form-group">
                 <label for="jenis-barang">Jenis Barang:</label>
                 <select id="jenis-barang" name="jenis_barang" required>
                     <option value="">Pilih jenis barang</option>
-                    <option value="Aksesoris" <?php echo ($row['jenisBarang'] === 'Aksesoris') ? 'selected' : ''; ?>>Aksesoris</option>
-                    <option value="Alat tulis" <?php echo ($row['jenisBarang'] === 'Alat tulis') ? 'selected' : ''; ?>>Alat Tulis</option>
-                    <option value="Elektronik" <?php echo ($row['jenisBarang'] === 'Elektronik') ? 'selected' : ''; ?>>Elektronik</option>
-                    <option value="Barang lain" <?php echo ($row['jenisBarang'] === 'Barang lain') ? 'selected' : ''; ?>>Barang Lain</option>
+                    <option value="Aksesoris" <?= ($row['jenisBarang'] === 'Aksesoris') ? 'selected' : ''; ?>>Aksesoris</option>
+                    <option value="Alat tulis" <?= ($row['jenisBarang'] === 'Alat tulis') ? 'selected' : ''; ?>>Alat Tulis</option>
+                    <option value="Elektronik" <?= ($row['jenisBarang'] === 'Elektronik') ? 'selected' : ''; ?>>Elektronik</option>
+                    <option value="Barang lain" <?= ($row['jenisBarang'] === 'Barang lain') ? 'selected' : ''; ?>>Barang Lain</option>
                 </select>
-
             </div>
             <div class="form-group">
                 <label for="tempat">Tempat Hilang/Temuan:</label>
-                <input type="text" id="tempat" name="tempat" value="<?= isset($row['tempat']) ? $row['tempat'] : '' ?>" required>
+                <input type="text" id="tempat" name="tempat" value="<?= htmlspecialchars($row['tempat']) ?>" required>
             </div>
             <div class="form-group">
                 <label for="gambar-barang">Foto Barang:</label>
@@ -61,14 +61,24 @@ if ($result->num_rows > 0) {
             </div>
             <div class="form-group">
                 <label for="deskripsi">Deskripsi Barang:</label>
-                <textarea id="deskripsi" name="deskripsi" required><?= isset($row['deskripsi']) ? $row['deskripsi'] : '' ?></textarea>
+                <textarea id="deskripsi" name="deskripsi" required><?= htmlspecialchars($row['deskripsi']) ?></textarea>
             </div>
             <div class="form-group">
                 <label for="tanggal">Tanggal Pelaporan:</label>
-                <input type="date" id="tanggal" name="tanggal_pelaporan" value="<?php echo $row['reporting_date']; ?>" required>
+                <input type="date" id="tanggal" name="tanggal_pelaporan" value="<?= htmlspecialchars($row['reporting_date']) ?>" required>
             </div>
             <div class="form-group">
-                <button type="submit">Ubah</button>
+                <label for="status">Status Barang:</label>
+                <select id="status" name="flag" required>
+                    <option value=<?= false ?> <?= ($row['flag'] == false) ? 'selected' : ''; ?>>Belum ditemukan</option>
+                    <option value=<?= true  ?> <?= ($row['flag'] == true) ? 'selected' : ''; ?>>Sudah ditemukan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="button-container">
+                    <button type="button" onclick="history.back();">Back</button>
+                    <button type="submit">Ubah</button>
+                </div>                
             </div>
         </form>
     </div>

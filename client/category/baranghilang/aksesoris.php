@@ -1,5 +1,6 @@
 <?php 
 require '../../../controller/functions.php';
+session_start();
 
 // Fetching data using prepared statements
 function fetch_data($conn, $table_name, $jenis_barang = null) {
