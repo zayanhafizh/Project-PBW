@@ -136,10 +136,10 @@ const table = document.querySelector('table');
 const tableBody = table.querySelector('tbody');
 var path = window.location.pathname;
 path = path.split('/');
-path = path[4];
+path = path[3];
 var url = window.location.href;
 url = url.split('/');
-url = url[7];
+url = url[6];
 url = url.split('.')[0];
 inputReport.addEventListener('keyup', function () {
     const keyword = encodeURIComponent(inputReport.value.trim());
