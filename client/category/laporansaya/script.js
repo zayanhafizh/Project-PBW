@@ -163,13 +163,13 @@ inputReport.addEventListener('keyup', function () {
 const tableData = document.querySelectorAll('tr[data-id]');
 
 tableData.forEach(item => {
-    const actionButtons = item.querySelectorAll('.button-edit');
+    const actionButtons = item.querySelectorAll('.button-edit button');
     var id = item.getAttribute('data-id');
     var kategoriBarang = url.split('.')[0]; // Anda perlu mendapatkan kategori barang di luar loop agar nilainya dapat diakses di dalam event listener
 
     actionButtons.forEach(item => {
         item.addEventListener('click', function() {
-            if (item.className === "button-edit") {
+            if (item.className === "edit-button") {
                 // Mengirimkan ID dan kategori barang ke editController.php
                 window.location.href = `http://localhost/fixSiPencari/client/edit/index.php?id=${id}&kat=${kategoriBarang}`;
             } else {

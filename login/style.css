@@ -270,6 +270,20 @@ form.sign-in-form {
   pointer-events: all;
 }
 
+.footer {
+  top: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
