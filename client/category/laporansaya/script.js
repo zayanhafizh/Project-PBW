@@ -171,7 +171,7 @@ tableData.forEach(item => {
         item.addEventListener('click', function() {
             if (item.className === "edit-button") {
                 // Mengirimkan ID dan kategori barang ke editController.php
-                window.location.href = `http://localhost/fixSiPencari/client/edit/index.php?id=${id}&kat=${kategoriBarang}`;
+                window.location.href = `https://sipencari.rfaridh.my.id/client/edit/index.php?id=${id}&kat=${kategoriBarang}`;
             } else {
                 // Mengirimkan ID dan kategori barang ke deleteController.php
                 const cookiesContent = document.querySelector('.cookiesContent');
