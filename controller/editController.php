@@ -9,6 +9,7 @@ $tempat = htmlspecialchars($_POST['tempat']);
 $deskripsi = htmlspecialchars($_POST['deskripsi']);
 $tanggal_pelaporan = htmlspecialchars($_POST['tanggal_pelaporan']);
 $gambarLama = ($_POST["gambarLama"]);
+$flag = filter_var($_POST['flag'], FILTER_VALIDATE_BOOLEAN) ? 1 : 0;
 
 define('CLIENT_URL', 'https://sipencari.rfaridh.my.id/client/');
 define('LAPORAN_URL', CLIENT_URL . 'category/laporansaya/' . $kategoriBarang . '.php');
@@ -29,9 +30,10 @@ $stmt = $conn->prepare("UPDATE $kategoriBarang SET
                         gambar = ?, 
                         jenisBarang = ?, 
                         deskripsi = ?, 
-                        reporting_date = ?
+                        reporting_date = ?,
+                        flag = ?
                         WHERE id = ?");
-$stmt->bind_param("sssssss", $namaBarang, $tempat, $gambar, $jenisBarang, $deskripsi, $tanggal_pelaporan, $id);
+$stmt->bind_param("ssssssii", $namaBarang, $tempat, $gambar, $jenisBarang, $deskripsi, $tanggal_pelaporan, $flag, $id);
 
 if ($stmt->execute()) {
     header('Location:' . LAPORAN_URL);

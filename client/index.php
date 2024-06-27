@@ -11,8 +11,28 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
+if (isset($_POST['keyword'])) {
+    $keyword = '%' . $_POST['keyword'] . '%'; // Menambahkan wildcard % untuk pencarian
+    $query = "SELECT * FROM user 
+              INNER JOIN baranghilang ON user.id_user = baranghilang.id_user 
+              WHERE namaBarang LIKE ? OR
+                    tempat LIKE ? OR
+                    jenisBarang LIKE ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("sss", $keyword, $keyword, $keyword);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+} else {
+    // Query tanpa keyword
+    $query = "SELECT * FROM user 
+              INNER JOIN baranghilang ON user.id_user = baranghilang.id_user";
+    $result = $conn->query($query);
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+}
+
 // Fetch data from database
-$rows = query("SELECT * FROM user INNER JOIN baranghilang ON user.id_user = baranghilang.id_user");
 $barangHilang = query('SELECT * FROM baranghilang');
 $user = query('SELECT * FROM user');
 $barangTemuan = query('SELECT * FROM barangtemuan');
@@ -94,7 +114,6 @@ $countDiscoverGoods = count($barangTemuan);
                                     <th>Type</th>
                                     <th>Place</th>
                                     <th>Description</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -110,8 +129,7 @@ $countDiscoverGoods = count($barangTemuan);
                                         <td ><?= htmlspecialchars($row['reporting_date']); ?></td>
                                         <td><?= htmlspecialchars($row['tempat']); ?></td>
                                         <td><?= htmlspecialchars($row['jenisBarang']); ?></td>
-                                        <td><?= htmlspecialchars($row['deskripsi']); ?></td>
-                                        <td><span class="status completed">Completed</span></td>
+                                        <td><?= htmlspecialchars($row['deskripsi']); ?></td>                               
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

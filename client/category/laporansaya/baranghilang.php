@@ -14,6 +14,8 @@ $countDiscoverGoods = count($barangTemuan);
 $id_user = $_SESSION['id_user'];
 
 $rows = query("SELECT * FROM baranghilang WHERE id_user = $id_user");
+
+
 ?>
 
 
@@ -107,7 +109,16 @@ $rows = query("SELECT * FROM baranghilang WHERE id_user = $id_user");
 									<td> <?= $row['reporting_date'] ?> </td>
 									<td><?= $row['tempat'] ?></td>
 									<td><?= $row['deskripsi'] ?></td>
-									<td><span class="status completed">Completed</span></td>
+									<?php 
+										if ($row['flag'] == false) {
+											$flag = "Belum Ditemukan";
+											$flagClass = "belumditemukan";
+										} else {
+											$flag = "Sudah Ditemukan";
+											$flagClass = "sudahditemukan";
+										}
+									?>
+									<td><span class="status <?=$flagClass  ?>"><?= $flag;   ?></span></td>
 									<td class="button-edit">
 										<button class="edit-button">
 											<i data-feather="edit"></i>

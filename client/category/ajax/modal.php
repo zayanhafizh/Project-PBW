@@ -47,7 +47,7 @@ if ($id && is_numeric($id)) {
         <ul>
             <li>Nama Barang</li>
             <li>Email</li>
-            <li>Tempat Hilang</li>
+            <li>Tempat</li>
             <li>Tanggal Dilaporkan</li>
         </ul>
     </div>

@@ -28,7 +28,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $res .= '<td>' . htmlspecialchars($row['tempat'], ENT_QUOTES, 'UTF-8') . '</td>';
     $res .= '<td>' . htmlspecialchars($row['jenisBarang'], ENT_QUOTES, 'UTF-8') . '</td>';
     $res .= '<td>' . htmlspecialchars($row['deskripsi'], ENT_QUOTES, 'UTF-8') . '</td>';
-    $res .= '<td><span class="status completed">Completed</span></td>';
     $res .= '</tr>';
 }
 
