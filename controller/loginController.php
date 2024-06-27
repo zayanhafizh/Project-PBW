@@ -10,14 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    // Autentikasi Admin
-    if ($username === "admin" && $password === "adminganteng") {
-        session_regenerate_id(true);
-        $_SESSION["login"] = true;
-        header("Location: " . ADMIN_URL);
-        exit;
-    }
-
     // Autentikasi User
     $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
     $stmt->bind_param("s", $username);
